@@ -7,14 +7,17 @@ package deadlock;
 
 
 /**
- * Implementing Deadlock through impassable lock conditions
+ * Fix Deadlock through code changes
  * Utilizes the bank account example from the text to create the condition
  */
 public class Deadlock {
     
     public static final int NUMBER_ACCOUNTS = 10;
     public static final double INITIAL_BALANCE = 1000;
-    public static final double MAX_AMOUNT = 2500;
+    
+    //Changing MAX_AMOUNT to a value lower than initial balance allows us to
+    //overcome the deadlock created
+    public static final double MAX_AMOUNT = 800;
     
     public static void main(String[] args) {
         Bank deadlockBank = new Bank(NUMBER_ACCOUNTS, INITIAL_BALANCE);
